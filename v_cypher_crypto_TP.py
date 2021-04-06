@@ -31,7 +31,7 @@ def Tashfiiiir(text , cle):
     for tag in tagging_the_message:
         i = 0
         for alphabet in tag:
-            number = (text_to_code[alphabet] + text_to_code[cle[i]]) % len(text)
+            number = (text_to_code[alphabet] + text_to_code[cle[i]]) % len(Tashfiiiir_alphabits)
             Moshafar += code_to_text[number]
             i += 1
     
@@ -40,12 +40,12 @@ def Tashfiiiir(text , cle):
 # creating the function that it does all the decryption then add to it a last step through out a quick function
 def Break_Tashfiiiir(cypher , cle):
     not_Moshafar = ""
-    tagging_the_message = [cypher[i:i + len(cle)] for i in range(0 , len(cypher) , len(cle))]
+    breaking_the_tag = [cypher[i:i + len(cle)] for i in range(0 , len(cypher) , len(cle))]
 
-    for tag in tagging_the_message:
+    for tag in breaking_the_tag:
         i = 0
         for alphabet in tag:
-            number = (text_to_code[alphabet] + text_to_code[cle[i]]) % len(cypher)
+            number = (text_to_code[alphabet] - text_to_code[cle[i]]) % len(Tashfiiiir_alphabits)
             not_Moshafar += code_to_text[number]
             i += 1 
 
