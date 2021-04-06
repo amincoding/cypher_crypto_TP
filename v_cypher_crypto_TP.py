@@ -5,7 +5,7 @@
     author : amin abdedaiem
     date & time : april 5th 2021
     subject :  Vigenere Cipher cryptography 
-    link : https://github.com/amincoding/cypher_crypto_TP
+    link : https://github.com/amincoding/crypted_crypto_TP
 
 
 """
@@ -26,9 +26,9 @@ code_to_text = dict(zip(range(len(Tashfiiiir_alphabits)),Tashfiiiir_alphabits))
 # creating the function that it does all the encryption then add to it a last step through out a quick function
 def Tashfiiiir(text , cle):
     Moshafar = ""
-    tagging_the_message = [text[i:i + len(cle)] for i in range(0 , len(text) , len(cle))]
+    split_text_cle = [text[i:i + len(cle)] for i in range(0 , len(text) , len(cle))]
 
-    for tag in tagging_the_message:
+    for tag in split_text_cle:
         i = 0
         for alphabet in tag:
             number = (text_to_code[alphabet] + text_to_code[cle[i]]) % len(Tashfiiiir_alphabits)
@@ -38,11 +38,11 @@ def Tashfiiiir(text , cle):
     return Moshafar
 
 # creating the function that it does all the decryption then add to it a last step through out a quick function
-def Break_Tashfiiiir(cypher , cle):
+def Break_Tashfiiiir(crypted , cle):
     not_Moshafar = ""
-    breaking_the_tag = [cypher[i:i + len(cle)] for i in range(0 , len(cypher) , len(cle))]
+    split_cypted_cle = [crypted[i:i + len(cle)] for i in range(0 , len(crypted) , len(cle))]
 
-    for tag in breaking_the_tag:
+    for tag in split_cypted_cle:
         i = 0
         for alphabet in tag:
             number = (text_to_code[alphabet] - text_to_code[cle[i]]) % len(Tashfiiiir_alphabits)
