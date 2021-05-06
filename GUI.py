@@ -1,3 +1,14 @@
+#!usr/bin/python3
+
+"""
+	alpha :  
+	author : amin abdedaiem
+	date & time : april 5th 2021
+	subject :  Vigenere Cipher cryptography 
+	link : https://github.com/amincoding/crypted_crypto_TP
+
+
+"""
 from PyQt5 import QtCore, QtGui, QtWidgets 
 from PyQt5.QtWidgets import QTextBrowser
 import sys
